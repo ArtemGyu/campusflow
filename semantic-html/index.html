@@ -18,6 +18,13 @@
     </nav>
   </header>
 
+  <nav aria-label="Хлебные крошки">
+    <ol>
+      <li><a href="index.html">Главная</a></li>
+      <li><span aria-current="page">Список обращений</span></li>
+    </ol>
+  </nav>
+
   <main id="main-content">
     <h1>Мои обращения</h1>
 
@@ -44,6 +51,41 @@
         <p>Прошу изменить контактный адрес электронной почты.</p>
         <a href="ticket-103.html">Открыть обращение №103</a>
       </article>
+    </section>
+
+    <section aria-labelledby="history-heading">
+      <h2 id="history-heading">История изменений статусов</h2>
+      <table>
+        <caption>Журнал обновления статусов обращения №101</caption>
+        <thead>
+          <tr>
+            <th scope="col">Дата и время</th>
+            <th scope="col">Статус</th>
+            <th scope="col">Исполнитель</th>
+            <th scope="col">Комментарий</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>10.10.2026 10:00</td>
+            <td>Новое</td>
+            <td>Система</td>
+            <td>Обращение зарегистрировано в системе</td>
+          </tr>
+          <tr>
+            <td>10.10.2026 11:30</td>
+            <td>В работе</td>
+            <td>Иван Иванов</td>
+            <td>Назначен специалист технической поддержки</td>
+          </tr>
+          <tr>
+            <td>11.10.2026 09:15</td>
+            <td>В работе</td>
+            <td>Иван Иванов</td>
+            <td>Запрошены дополнительные логи у пользователя</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <section aria-labelledby="help-heading">
