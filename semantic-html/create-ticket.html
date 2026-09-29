@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Создать обращение — Help Desk</title>
+</head>
+<body>
+  <a href="#main-content">Перейти к основному содержимому</a>
+
+  <header>
+    <p><strong>Help Desk</strong></p>
+    <nav aria-label="Основная навигация">
+      <ul>
+        <li><a href="index.html">Обращения</a></li>
+        <li><a href="create-ticket.html">Создать обращение</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <h1>Создать обращение</h1>
+
+    <form action="#" method="post">
+      <div>
+        <label for="customer-name">Имя</label>
+        <input id="customer-name" name="customerName" type="text" autocomplete="name" required>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+
+      <div>
+        <label for="preferred-contact">Предпочитаемый способ связи</label>
+        <select id="preferred-contact" name="preferredContact">
+          <option value="email">Email</option>
+          <option value="phone">Телефон</option>
+          <option value="telegram">Telegram</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="title">Тема обращения</label>
+        <input id="title" name="title" type="text" required aria-describedby="title-hint">
+        <p id="title-hint">Кратко опишите суть проблемы (например: Не работает вход).</p>
+      </div>
+
+      <div>
+        <label for="category">Категория</label>
+        <select id="category" name="category" required>
+          <option value="">Выберите категорию</option>
+          <option value="access">Доступ</option>
+          <option value="software">Программное обеспечение</option>
+          <option value="other">Другое</option>
+        </select>
+      </div>
+
+      <fieldset>
+        <legend>Приоритет</legend>
+        <label><input type="radio" name="priority" value="normal" checked> Обычный</label>
+        <label><input type="radio" name="priority" value="high"> Высокий</label>
+      </fieldset>
+
+      <div>
+        <label for="description">Описание проблемы</label>
+        <textarea id="description" name="description" rows="7" required></textarea>
+      </div>
+
+      <div>
+        <label>
+          <input type="checkbox" name="consent" required>
+          Подтверждаю корректность введенных данных
+        </label>
+      </div>
+
+      <button type="submit">Отправить обращение</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Учебный проект Help Desk</p>
+  </footer>
+</body>
+</html>
