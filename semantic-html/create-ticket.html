@@ -4,90 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Создать обращение — Help Desk</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <a href="#main-content">Перейти к основному содержимому</a>
-
-  <header>
-    <p><strong>Help Desk</strong></p>
-    <nav aria-label="Основная навигация">
-      <ul>
-        <li><a href="index.html">Обращения</a></li>
-        <li><a href="create-ticket.html">Создать обращение</a></li>
-      </ul>
-    </nav>
+  <a class="skip-link" href="#main-content">Перейти к основному содержимому</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">HD</span>Help Desk</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul>
+          <li><a href="index.html">Обращения</a></li>
+          <li><a href="create-ticket.html" aria-current="page">Создать обращение</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-
-  <nav aria-label="Хлебные крошки">
-    <ol>
-      <li><a href="index.html">Обращения</a></li>
-      <li><span aria-current="page">Создать обращение</span></li>
-    </ol>
+  <nav class="container breadcrumbs" aria-label="Хлебные крошки">
+    <ol><li><a href="index.html">Главная</a></li><li><span aria-current="page">Создать обращение</span></li></ol>
   </nav>
-
-  <main id="main-content">
-    <h1>Создать обращение</h1>
-
-    <form action="#" method="post">
-      <div>
-        <label for="customer-name">Имя</label>
-        <input id="customer-name" name="customerName" type="text" autocomplete="name" required>
-      </div>
-
-      <div>
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required>
-      </div>
-
-      <div>
-        <label for="preferred-contact">Предпочитаемый способ связи</label>
-        <select id="preferred-contact" name="preferredContact">
-          <option value="email">Email</option>
-          <option value="phone">Телефон</option>
-          <option value="telegram">Telegram</option>
-        </select>
-      </div>
-
-      <div>
-        <label for="title">Тема обращения</label>
-        <input id="title" name="title" type="text" required aria-describedby="title-hint">
-        <p id="title-hint">Кратко опишите суть проблемы (например: Не работает вход).</p>
-      </div>
-
-      <div>
-        <label for="category">Категория</label>
-        <select id="category" name="category" required>
-          <option value="">Выберите категорию</option>
-          <option value="access">Доступ</option>
-          <option value="software">Программное обеспечение</option>
-          <option value="other">Другое</option>
-        </select>
-      </div>
-
-      <fieldset>
-        <legend>Приоритет</legend>
-        <label><input type="radio" name="priority" value="normal" checked> Обычный</label>
-        <label><input type="radio" name="priority" value="high"> Высокий</label>
-      </fieldset>
-
-      <div>
-        <label for="description">Описание проблемы</label>
-        <textarea id="description" name="description" rows="7" required></textarea>
-      </div>
-
-      <div>
-        <label>
-          <input type="checkbox" name="consent" required>
-          Подтверждаю корректность введенных данных
-        </label>
-      </div>
-
-      <button type="submit">Отправить обращение</button>
-    </form>
+  <main class="container" id="main-content" tabindex="-1">
+    <div class="page-intro"><div><h1>Создать обращение</h1><p class="page-description">Опишите проблему, чтобы специалист смог вам помочь.</p></div></div>
+    <div class="form-layout">
+      <form class="panel ticket-form" action="#" method="post">
+        <div class="form-grid">
+          <div class="field"><label for="customer-name">Имя</label><input id="customer-name" name="customerName" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="field"><label for="preferred-contact">Предпочитаемый способ связи</label><select id="preferred-contact" name="preferredContact"><option value="email">Email</option><option value="phone">Телефон</option><option value="telegram">Telegram</option></select></div>
+        <div class="field" id="contact-field" hidden><label for="contact-value">Телефон или Telegram</label><input id="contact-value" name="contactValue" type="text" disabled></div>
+        <div class="field"><label for="title">Тема обращения</label><input id="title" name="title" type="text" required aria-describedby="title-hint"><p class="field-hint" id="title-hint">Кратко опишите суть проблемы (например: Не работает вход).</p></div>
+        <div class="field"><label for="category">Категория</label><select id="category" name="category" required><option value="">Выберите категорию</option><option value="access">Доступ</option><option value="software">Программное обеспечение</option><option value="other">Другое</option></select></div>
+        <fieldset><legend>Приоритет</legend><div class="choices"><label class="choice"><input type="radio" name="priority" value="normal" checked>Обычный</label><label class="choice"><input type="radio" name="priority" value="high">Высокий</label></div></fieldset>
+        <div class="field"><label for="description">Описание проблемы</label><textarea id="description" name="description" rows="7" required></textarea></div>
+        <label class="choice"><input type="checkbox" name="consent" required>Подтверждаю корректность введённых данных</label>
+        <div class="form-actions"><button class="button" type="submit">Отправить обращение</button><a href="index.html">Отмена</a></div>
+        <p class="field-hint">Учебная форма: данные не отправляются на сервер.</p>
+        <p class="form-result" role="status" tabindex="-1" hidden></p>
+      </form>
+      <aside class="panel" aria-labelledby="form-help-heading"><div class="panel-title"><h2 id="form-help-heading">Что указать в обращении</h2></div><p class="help-copy">Опишите, что произошло, какие действия вы выполняли и какой результат ожидали.</p><p class="help-copy">Если появилось сообщение об ошибке, добавьте его текст в описание.</p><img class="support-image" src="assets/images/support.svg" width="334" height="160" alt=""></aside>
+    </div>
   </main>
-
-  <footer>
-    <p>Учебный проект Help Desk</p>
+  <script src="assets/js/form.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner"><p>Учебный проект Help Desk</p><p>Служба поддержки пользователей</p></div>
   </footer>
 </body>
 </html>
